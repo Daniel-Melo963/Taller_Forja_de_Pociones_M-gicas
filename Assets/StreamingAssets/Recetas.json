@@ -1,0 +1,40 @@
+{
+   "recetas":[
+      {
+         "id":1,
+         "nombre":"Pocion de Vision",
+         "objetivos":[
+            {
+               "ingrediente":"hongo",
+               "cantidad":3
+            },
+            {
+               "ingrediente":"raiz",
+               "cantidad":2
+            },
+            {
+               "ingrediente":"polvo",
+               "cantidad":1
+            }
+         ]
+      },
+      {
+         "id":2,
+         "nombre":"Elixir de Fuego",
+         "objetivos":[
+            {
+               "ingrediente":"ojo",
+               "cantidad":3
+            },
+            {
+               "ingrediente":"salamandra",
+               "cantidad":2
+            },
+            {
+               "ingrediente":"lagrima",
+               "cantidad":1
+            }
+         ]
+      }
+   ]
+}
