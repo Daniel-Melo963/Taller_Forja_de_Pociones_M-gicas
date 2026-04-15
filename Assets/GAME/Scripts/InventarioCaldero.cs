@@ -16,7 +16,6 @@ public class InventarioCaldero : MonoBehaviour
         foreach (Transform hijo in panelContenedor) Destroy(hijo.gameObject);
         foreach (var item in GameManager.Instance.inventario)
         {
-            
             for (int i = 0; i < item.Value; i++)
             {
                 GameObject nuevoItem = Instantiate(prefabItem, panelContenedor);

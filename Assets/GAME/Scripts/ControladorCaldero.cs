@@ -76,7 +76,7 @@ public class ControladorCaldero : MonoBehaviour, IDropHandler
 
     void VerificarVictoria()
     {
-        if (yaTerminoEstaPocion) return; // Si ya terminó, no hagas nada más
+        if (yaTerminoEstaPocion) return;
 
         bool completada = true;
         foreach (var obj in datosReceta.objetivos)
@@ -88,11 +88,7 @@ public class ControladorCaldero : MonoBehaviour, IDropHandler
         {
             yaTerminoEstaPocion = true;
             Debug.Log("¡POCIÓN COMPLETADA: " + datosReceta.nombre + "!");
-
-            // Avisamos al RecipeManager que este caldero ya terminó
             RecipeManager.Instance.RegistrarRecetaTerminada();
-
-            // Opcional: Cambiar el texto para dar feedback al jugador
             RecipeManager.Instance.panelTextoMision.text = $"¡{datosReceta.nombre} Lista!";
         }
     }

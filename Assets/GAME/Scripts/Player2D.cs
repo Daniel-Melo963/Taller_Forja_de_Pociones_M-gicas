@@ -7,6 +7,9 @@ public class PlayerMovement2D : MonoBehaviour
     public float speed = 5f;
     public float jumpForce = 3f;
 
+    public float limiteCaida = -10f;
+    private Vector3 puntoInicial;
+
     private Rigidbody2D rb;
     private Animator anim; 
     private Vector2 moveInput;
@@ -15,7 +18,22 @@ public class PlayerMovement2D : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>(); 
+        anim = GetComponent<Animator>();
+        puntoInicial = transform.position;
+    }
+
+    void Update()
+    {
+        if (transform.position.y < limiteCaida)
+        {
+            Reaparecer();
+        }
+    }
+
+    void Reaparecer()
+    {
+        transform.position = puntoInicial;
+        rb.linearVelocity = Vector2.zero;
     }
 
     public void OnMove(InputAction.CallbackContext context)
