@@ -32,7 +32,7 @@ public class CauldronManager : MonoBehaviour, IDropHandler
             {
                 obj.cantidad--;
                 ActualizarTexto();
-                MissionManager.Instance.VerificarVictoriaFinal();
+                //MissionManager.Instance.VerificarVictoriaFinal();
             }
         }
         else { Debug.Log("Ingrediente no compatible"); }

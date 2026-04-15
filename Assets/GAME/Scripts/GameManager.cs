@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
         if (!inventario.ContainsKey(id)) inventario.Add(id, 0);
         inventario[id]++;
         UIManager.Instance.ActualizarHUD();
-        MissionManager.Instance.VerificarMision1();
+        //MissionManager.Instance.VerificarMision1();
     }
 
     public bool UsarIngrediente(string id, int valor)

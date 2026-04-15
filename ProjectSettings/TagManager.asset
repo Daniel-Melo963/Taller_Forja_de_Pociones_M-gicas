@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Mapa
+  - Salida
   layers:
   - Default
   - TransparentFX

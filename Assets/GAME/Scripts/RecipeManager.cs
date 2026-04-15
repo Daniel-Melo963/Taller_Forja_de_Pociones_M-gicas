@@ -1,11 +1,16 @@
-using UnityEngine;
 using System.Collections.Generic;
 using System.IO;
+using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RecipeManager : MonoBehaviour
 {
     public static RecipeManager Instance;
     public List<Receta> todasLasRecetas;
+    public TextMeshProUGUI panelTextoMision;
+    private int recetasCompletadas = 0;
+    public GameObject panelGanaste;
 
     private void Awake()
     {
@@ -19,6 +24,36 @@ public class RecipeManager : MonoBehaviour
         string jsonText = File.ReadAllText(path);
         RecetasWrapper wrapper = JsonUtility.FromJson<RecetasWrapper>(jsonText);
         todasLasRecetas = wrapper.recetas;
+    }
+
+    public void MostrarRecetaActual(int indice)
+    {
+        Receta r = todasLasRecetas[indice];
+        string listaObjetivos = $"Misión: {r.nombre}\n";
+
+        foreach (var obj in r.objetivos)
+        {
+            listaObjetivos += $"- {obj.ingrediente}: {obj.cantidad}\n";
+        }
+
+        panelTextoMision.text = listaObjetivos;
+    }
+
+    public void RegistrarRecetaTerminada()
+    {
+        recetasCompletadas++;
+
+        if (recetasCompletadas >= todasLasRecetas.Count)
+        {
+            panelGanaste.SetActive(true);
+            Time.timeScale = 0f;
+            Cursor.visible = true;
+        }
+    }
+
+    void IrAPantallaGanaste()
+    {
+        SceneManager.LoadScene("PantallaGanaste");
     }
 
     public Receta ObtenerRecetaPorId(int id) => todasLasRecetas.Find(r => r.id == id);
