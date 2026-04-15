@@ -6,3 +6,4 @@ public class Scene2Controller : MonoBehaviour
         UIManager.Instance.ActualizarHUD();
     }
 }
+

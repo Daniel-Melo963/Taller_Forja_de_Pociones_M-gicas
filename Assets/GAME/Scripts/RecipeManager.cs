@@ -27,4 +27,3 @@ public class RecipeManager : MonoBehaviour
 [System.Serializable] public class ObjetivoReceta { public string ingrediente; public int cantidad; }
 [System.Serializable] public class Receta { public int id; public string nombre; public List<ObjetivoReceta> objetivos; }
 [System.Serializable] public class RecetasWrapper { public List<Receta> recetas; }
-

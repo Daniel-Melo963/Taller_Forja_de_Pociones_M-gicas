@@ -10,7 +10,7 @@ public class MissionManager : MonoBehaviour
     {
         int total = 0;
         foreach (var item in GameManager.Instance.inventario) total += item.Value;
-        if (total >= 12) SceneManager.LoadScene("Escena2");
+        if (total >= 12) SceneManager.LoadScene("SceneIngredientes");
     }
 
     public void VerificarVictoriaFinal()
