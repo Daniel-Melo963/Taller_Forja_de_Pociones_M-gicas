@@ -10,12 +10,12 @@ public class UIManager : MonoBehaviour
 
     public void ActualizarHUD()
     {
-        txtPuntos.text = "Puntos: " + GameManager.Instance.puntosTotales;
-        txtHongo.text = "Hongo: " + GameManager.Instance.GetCantidad("hongo") + "/3";
-        txtOjo.text = "Ojo: " + GameManager.Instance.GetCantidad("ojo") + "/3";
-        txtRaiz.text = "Raiz: " + GameManager.Instance.GetCantidad("raiz") + "/2";
-        txtSalamandra.text = "Salamandra: " + GameManager.Instance.GetCantidad("salamandra") + "/2";
-        txtPolvo.text = "Polvo: " + GameManager.Instance.GetCantidad("polvo") + "/1";
-        txtLagrima.text = "Lagrima: " + GameManager.Instance.GetCantidad("lagrima") + "/1";
+        txtPuntos.text = "" + GameManager.Instance.puntosTotales;
+        txtHongo.text = "" + GameManager.Instance.GetCantidad("hongo") + "/3";
+        txtOjo.text = "" + GameManager.Instance.GetCantidad("ojo") + "/3";
+        txtRaiz.text = "" + GameManager.Instance.GetCantidad("raiz") + "/2";
+        txtSalamandra.text = "" + GameManager.Instance.GetCantidad("salamandra") + "/2";
+        txtPolvo.text = "" + GameManager.Instance.GetCantidad("polvo") + "/1";
+        txtLagrima.text = "" + GameManager.Instance.GetCantidad("lagrima") + "/1";
     }
 }
