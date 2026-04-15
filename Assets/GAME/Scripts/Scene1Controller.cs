@@ -3,7 +3,7 @@ public class Scene1Controller : MonoBehaviour
 {
     void Start()
     {
-        FindObjectOfType<ItemSpawner>().Spawnear();
+        Object.FindFirstObjectByType<ItemSpawner>().Spawnear();
         UIManager.Instance.ActualizarHUD();
     }
 }
